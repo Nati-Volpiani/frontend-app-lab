@@ -4,7 +4,32 @@
 
 ## Current status
 
-Initial planning stage. The sprint requirements and React learning guide are available on `develop`. The application has not been implemented yet; setup and run instructions will be added once it is initialized.
+Sprint 1 is in progress.
+
+- The React + Vite project has been initialized in `junior-store/`.
+- React Router has been installed but is not configured yet.
+- The app still shows the default Vite starter page. The store's components, pages, and routes have not been built yet.
+
+## Getting started
+
+Requirements: [Node.js](https://nodejs.org/) 20.19+ or 22.12+ (npm is included).
+
+```bash
+cd junior-store
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173/ in a browser. Press `Ctrl + C` in the terminal to stop the development server.
+
+## Project structure
+
+```
+frontend-app-lab/
+├── issues/          Sprint requirements and React guide (develop branch)
+├── junior-store/    React + Vite application
+└── README.md
+```
 
 ## Planned first sprint
 
