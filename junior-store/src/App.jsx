@@ -1,8 +1,13 @@
 import HeroBanner from './components/HeroBanner.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
-    <HeroBanner />
+    <>
+      <HeroBanner />
+      <Footer />
+    </>
+
   );
 }
 
