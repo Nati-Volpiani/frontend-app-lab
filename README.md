@@ -8,7 +8,8 @@ Sprint 1 is in progress.
 
 - The React + Vite project has been initialized in `junior-store/`.
 - React Router has been installed but is not configured yet.
-- The app still shows the default Vite starter page. The store's components, pages, and routes have not been built yet.
+- The Vite starter page has been removed. The app currently shows the `HeroBanner` component.
+- The remaining components (Navbar, ProductCard, FeaturedProducts, Footer), pages, and routes have not been built yet.
 
 ## Getting started
 
