@@ -1,6 +1,6 @@
 # Frontend App Lab
 
-**Junior Store** is an e-commerce application project, starting with the frontend. It also serves as a practical environment for learning web development and testing.
+**lab-store** is an e-commerce application project, starting with the frontend. It also serves as a practical environment for learning web development and testing.
 
 ## Current status
 
