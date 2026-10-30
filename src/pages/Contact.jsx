@@ -1,4 +1,4 @@
-function Contact() {
+const Contact = () => {
     return (
         <section>
             <h1>Contact</h1>
@@ -6,5 +6,4 @@ function Contact() {
         </section>
     );
 }
-
 export default Contact;

@@ -1,6 +1,6 @@
 import './ProductCard.css';
 
-function ProductCard({ name, price }) {
+const ProductCard = ({ name, price }) => {
     return (
         <article className="product-card">
             <div className="image-placeholder">Image</div>
@@ -9,5 +9,4 @@ function ProductCard({ name, price }) {
         </article>
     );
 }
-
 export default ProductCard;

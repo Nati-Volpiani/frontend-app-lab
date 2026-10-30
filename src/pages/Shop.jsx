@@ -1,4 +1,4 @@
-function Shop() {
+const Shop = () => {
     return (
         <section>
             <h1>Shop</h1>
@@ -6,5 +6,4 @@ function Shop() {
         </section>
     );
 }
-
 export default Shop;

@@ -1,4 +1,4 @@
-function HeroBanner() {
+const HeroBanner = () =>  {
     return (
         <section>
             <h1>New Arrivals</h1>
@@ -7,5 +7,4 @@ function HeroBanner() {
         </section>
     );
 }
-
 export default HeroBanner;

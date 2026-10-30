@@ -1,7 +1,7 @@
 import HeroBanner from '../components/HeroBanner.jsx';
 import FeaturedProducts from '../components/FeaturedProducts.jsx';
 
-function Home() {
+const Home = () => {
     return (
         <>
         
@@ -10,5 +10,4 @@ function Home() {
         </>
     );
 }
-
 export default Home;

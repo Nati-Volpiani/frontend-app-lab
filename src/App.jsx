@@ -8,7 +8,7 @@ import Contact from './pages/Contact.jsx';
 import Cart from './pages/Cart.jsx';
 import NotFound from './pages/NotFound.jsx';
 
-function App() {
+const App = () => {
   return (
     <>
       <Navbar />
@@ -24,5 +24,4 @@ function App() {
     </>
   );
 }
-
 export default App;

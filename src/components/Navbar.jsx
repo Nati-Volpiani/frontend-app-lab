@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-function Navbar() {
+const Navbar = () => {
     return (
     <nav className="navbar">
         <strong>Synergy</strong>
@@ -12,5 +12,4 @@ function Navbar() {
     </nav>
     );
 }
-
 export default Navbar;

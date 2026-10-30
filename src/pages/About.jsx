@@ -1,4 +1,4 @@
-function About() {
+const About = () => {
     return (
         <section>
             <h1>About</h1>
@@ -6,5 +6,4 @@ function About() {
         </section>
     );
 }
-
 export default About;

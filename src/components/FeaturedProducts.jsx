@@ -7,7 +7,7 @@ const products = [
     { id: 3, name: 'Leather Bag', price: 89 },
 ];
 
-function FeaturedProducts() {
+const FeaturedProducts = () => {
     return (
         <section className="featured-products">
             <h2>Featured</h2>
@@ -23,5 +23,4 @@ function FeaturedProducts() {
         </section>
     );
 }
-
 export default FeaturedProducts;
