@@ -1,4 +1,5 @@
 import ProductCard from './ProductCard.jsx';
+import './FeaturedProducts.css';
 
 const products = [
     { id: 1, name: 'Sweater', price: 49 },
@@ -8,7 +9,7 @@ const products = [
 
 function FeaturedProducts() {
     return (
-        <section>
+        <section className="featured-products">
             <h2>Featured</h2>
             <div className="product-grid">
                 {products.map((product) => (

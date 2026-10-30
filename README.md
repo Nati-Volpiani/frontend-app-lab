@@ -10,8 +10,8 @@ Sprint 1 is in progress.
 - React Router is configured with `BrowserRouter`, `Routes`, and `Route`.
 - Pages: Home (`/`), Shop (`/shop`), About (`/about`), Contact (`/contact`), Cart (`/cart`), and a Not Found page for any other URL. Shop, About, Contact, and Cart show placeholder content.
 - The `Navbar` and `Footer` are shared by all pages. The Home page shows the `HeroBanner` and `FeaturedProducts` components.
-- `FeaturedProducts` uses `map()` on a local product array to render three `ProductCard` components, passing each product's name and price as props. The cards are not styled yet.
-- Still pending: layout styling, the mobile layout, and the Pull Request.
+- `FeaturedProducts` uses `map()` on a local product array to render three `ProductCard` components, passing each product's name and price as props.
+- The layout uses Flexbox. On narrow screens, the product cards stack vertically and the navigation links wrap, so nothing overflows horizontally (checked on a 375 px wide screen).
 
 ## Getting started
 

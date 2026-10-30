@@ -1,3 +1,5 @@
+import './ProductCard.css';
+
 function ProductCard({ name, price }) {
     return (
         <article className="product-card">
