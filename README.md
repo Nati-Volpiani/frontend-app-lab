@@ -6,7 +6,7 @@
 
 Sprint 1 is in progress.
 
-- The React + Vite project has been initialized in `junior-store/`.
+- The React + Vite project lives at the root of the repository.
 - React Router is configured with `BrowserRouter`, `Routes`, and `Route`.
 - Pages: Home (`/`), Shop (`/shop`), About (`/about`), Contact (`/contact`), Cart (`/cart`), and a Not Found page for any other URL. Shop, About, Contact, and Cart show placeholder content.
 - The `Navbar` and `Footer` are shared by all pages. The Home page shows the `HeroBanner` and `FeaturedProducts` components.
@@ -17,8 +17,9 @@ Sprint 1 is in progress.
 
 Requirements: [Node.js](https://nodejs.org/) 20.19+ or 22.12+ (npm is included).
 
+From the `frontend-app-lab/` folder, run:
+
 ```bash
-cd junior-store
 npm install
 npm run dev
 ```
@@ -30,7 +31,14 @@ Then open http://localhost:5173/ in a browser. Press `Ctrl + C` in the terminal 
 ```
 frontend-app-lab/
 ├── issues/          Sprint requirements and React guide (develop branch)
-├── junior-store/    React + Vite application
+├── public/          Static files (favicon)
+├── src/
+│   ├── components/  Reusable UI components
+│   ├── pages/       One component per page
+│   ├── App.jsx      Routes
+│   └── main.jsx     App entry point
+├── index.html
+├── package.json
 └── README.md
 ```
 
