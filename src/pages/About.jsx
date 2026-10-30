@@ -2,7 +2,7 @@ const About = () => {
     return (
         <section>
             <h1>About</h1>
-            <p>Synergy is an online store for everyday clothing and accessories.</p>
+            <p>lab-store is an online store for everyday clothing and accessories.</p>
         </section>
     );
 }
