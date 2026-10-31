@@ -1,6 +1,11 @@
 import './ProductCard.css';
 
-const ProductCard = ({ name, price }) => {
+type ProductCardProps = {
+    name: string;
+    price: number;
+};
+
+const ProductCard = ({ name, price }: ProductCardProps) => {
     return (
         <article className="product-card">
             <div className="image-placeholder">Image</div>
