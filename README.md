@@ -7,6 +7,7 @@
 Sprint 1 is in progress.
 
 - The React + Vite project lives at the root of the repository.
+- The project uses TypeScript. Components are `.tsx` files, and `ProductCard` has typed props (`name` is a string, `price` is a number).
 - React Router is configured with `BrowserRouter`, `Routes`, and `Route`.
 - Pages: Home (`/`), Shop (`/shop`), About (`/about`), Contact (`/contact`), Cart (`/cart`), and a Not Found page for any other URL. Shop, About, Contact, and Cart show placeholder content.
 - The `Navbar` and `Footer` are shared by all pages. The Home page shows the `HeroBanner` and `FeaturedProducts` components.
@@ -26,6 +27,8 @@ npm run dev
 
 Then open http://localhost:5173/ in a browser. Press `Ctrl + C` in the terminal to stop the development server.
 
+To check the TypeScript types, run `npx tsc`. No output means there are no type errors. `npm run build` also checks the types before building.
+
 ## Project structure
 
 ```
@@ -35,16 +38,17 @@ frontend-app-lab/
 ├── src/
 │   ├── components/  Reusable UI components
 │   ├── pages/       One component per page
-│   ├── App.jsx      Routes
-│   └── main.jsx     App entry point
+│   ├── App.tsx      Routes
+│   └── main.tsx     App entry point
 ├── index.html
 ├── package.json
+├── tsconfig.json    TypeScript configuration
 └── README.md
 ```
 
 ## Planned first sprint
 
-- Build with React, Vite, JavaScript, React Router, and CSS.
+- Build with React, Vite, TypeScript, React Router, and CSS.
 - Create reusable navigation, banner, product card, and footer components.
 - Add Home, Shop, About, Contact, Cart, and Not Found pages.
 - Display three sample products and make the layout readable on mobile.
