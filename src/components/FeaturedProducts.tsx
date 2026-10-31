@@ -1,4 +1,4 @@
-import ProductCard from './ProductCard.jsx';
+import ProductCard from './ProductCard.tsx';
 import './FeaturedProducts.css';
 
 const products = [

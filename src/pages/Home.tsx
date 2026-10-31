@@ -1,5 +1,5 @@
-import HeroBanner from '../components/HeroBanner.jsx';
-import FeaturedProducts from '../components/FeaturedProducts.jsx';
+import HeroBanner from '../components/HeroBanner.tsx';
+import FeaturedProducts from '../components/FeaturedProducts.tsx';
 
 const Home = () => {
     return (

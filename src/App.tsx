@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar.jsx';
-import Footer from './components/Footer.jsx';
-import Home from './pages/Home.jsx';
-import Shop from './pages/Shop.jsx';
-import About from './pages/About.jsx';
-import Contact from './pages/Contact.jsx';
-import Cart from './pages/Cart.jsx';
-import NotFound from './pages/NotFound.jsx';
+import Navbar from './components/Navbar.tsx';
+import Footer from './components/Footer.tsx';
+import Home from './pages/Home.tsx';
+import Shop from './pages/Shop.tsx';
+import About from './pages/About.tsx';
+import Contact from './pages/Contact.tsx';
+import Cart from './pages/Cart.tsx';
+import NotFound from './pages/NotFound.tsx';
 
 const App = () => {
   return (
