@@ -16,18 +16,18 @@ Sprint 1 is in progress.
 
 ## Getting started
 
-Requirements: [Node.js](https://nodejs.org/) 20.19+ or 22.12+ (npm is included).
+Requirements: [Node.js](https://nodejs.org/) 20.19+ or 22.12+ and [Yarn](https://yarnpkg.com/) 4.
 
 From the `frontend-app-lab/` folder, run:
 
 ```bash
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 Then open http://localhost:5173/ in a browser. Press `Ctrl + C` in the terminal to stop the development server.
 
-To check the TypeScript types, run `npx tsc`. No output means there are no type errors. `npm run build` also checks the types before building.
+To check the TypeScript types, run `yarn tsc`. No output means there are no type errors. `yarn build` also checks the types before building.
 
 ## Project structure
 
