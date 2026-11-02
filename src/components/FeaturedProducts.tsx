@@ -1,7 +1,13 @@
 import ProductCard from './ProductCard.tsx';
 import './FeaturedProducts.css';
 
-const products = [
+type Product = {
+    id: number;
+    name: string;
+    price: number;
+};
+
+const products: Product[] = [
     { id: 1, name: 'Sweater', price: 49 },
     { id: 2, name: 'T-Shirt', price: 25 },
     { id: 3, name: 'Leather Bag', price: 89 },
