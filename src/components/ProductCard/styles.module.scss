@@ -1,0 +1,40 @@
+.card {
+    width: var(--product-card-width);
+    max-width: 100%;
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    color: var(--text);
+    text-decoration: none;
+
+    &:hover {
+        background: var(--accent-bg);
+    }
+
+    &:focus-visible {
+        outline: var(--focus-width) solid var(--accent);
+        outline-offset: calc(-1 * var(--focus-offset));
+    }
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: var(--product-photo-ratio);
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    background: var(--product-photo-bg);
+}
+
+.name {
+    margin: var(--space-none);
+    color: var(--text-h);
+    font-size: var(--font-size-emphasis);
+}

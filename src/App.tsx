@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
 import Shop from './pages/Shop.tsx';
+import ProductDetails from './pages/ProductDetails.tsx';
 import About from './pages/About.tsx';
 import Contact from './pages/Contact.tsx';
 import Cart from './pages/Cart.tsx';
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />

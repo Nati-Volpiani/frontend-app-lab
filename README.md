@@ -4,14 +4,14 @@
 
 ## Current status
 
-This branch includes the completed Issue 2 exercise: state, effects, and cleanup.
+This branch contains the approved Issue 2 implementation: product details, gallery state, quantity, and title cleanup. The PDF describes the same exercise.
 
 - The React + Vite project lives at the root of the repository.
-- The project uses TypeScript. Components are `.tsx` files, and `ProductCard` has typed props (`name` is a string, `price` is a number).
+- The project uses TypeScript. Components are `.tsx` files, and `ProductCard` receives a typed `Product` object.
 - React Router is configured with `BrowserRouter`, `Routes`, and `Route`.
-- Pages: Home (`/`), Shop (`/shop`), About (`/about`), Contact (`/contact`), Cart (`/cart`), and a Not Found page for any other URL. Shop includes an interactive product preview; About, Contact, and Cart show placeholder content.
+- Pages: Home (`/`), Shop (`/shop`), About (`/about`), Contact (`/contact`), Cart (`/cart`), and a Not Found page for any other URL. Product details live at `/products/:productId`. Shop is intentionally empty; About, Contact, and Cart show placeholder content.
 - The `Navbar` and `Footer` are shared by all pages. The Home page shows the `HeroBanner` and `FeaturedProducts` components.
-- `FeaturedProducts` uses `map()` on a local product array to render three `ProductCard` components, passing each product's name and price as props.
+- `FeaturedProducts` uses `map()` on a local product array to render three `ProductCard` components, passing each product as a prop. Each card links to its details page.
 - The layout uses Flexbox. On narrow screens, the product cards stack vertically and the navigation links wrap, so nothing overflows horizontally (checked on a 375 px wide screen).
 
 ## Getting started
@@ -57,36 +57,41 @@ API integration, a functional cart, authentication, and checkout are outside the
 
 ## Project documentation
 
-Available on the `develop` branch:
+Available in `issues/`:
 
-- [Sprint 1 requirements](https://github.com/Nati-Volpiani/frontend-app-lab/blob/develop/issues/Junior_Store_Sprint_01_Issue.pdf)
-- [React component guide](https://github.com/Nati-Volpiani/frontend-app-lab/blob/develop/issues/React_Components_Visual_Guide_01.pdf)
+- [Sprint 1 requirements](issues/Store_Sprint_01_Issue.pdf)
+- [React component guide](issues/React_Components_Visual_Guide_01.pdf)
 
 This README will be updated as the project develops and its scope evolves.
 
-## Issue 2: state, effects, and cleanup
+## Issue 2: product details
 
-Exercise: [Issue 2 requirements](issues/Junior_Store_Sprint_02_Issue.pdf).
+Start at `/` and click **Sweater**, **T-Shirt**, or **Leather Bag**. Each opens its own detail URL with a description, product photos, quantity controls, and a calculated subtotal. Selecting a thumbnail changes the main photo without changing the quantity. **Back to products** returns to Home. `/shop` is intentionally empty.
 
-Run `yarn dev`, open `/shop`, and select **Open product**. Use **+** and **−** to change the quantity. The subtotal and browser title follow the quantity; the timer counts seconds while the preview is open. Closing the preview or navigating away clears its interval and restores the original title. Opening it again resets quantity to 1 and time to 0.
+The [Issue 2 visual guide](issues/Store_Sprint_02_Issue.pdf) explains Home and product details with real screenshots and code excerpts, then shows how useState updates the UI and why useEffect synchronizes and restores the browser title.
 
 ### Where to read the implementation
 
-- `src/pages/Shop.tsx`: local visibility state and conditional rendering that mounts/unmounts the preview.
-- `src/components/ProductPreview.tsx`: quantity and time state, a derived subtotal, and two independent effects.
-- `src/components/ProductPreview/styles.module.scss` and `src/pages/Shop/styles.module.scss`: scoped styles, compiled with Sass. Shared tokens live in `src/index.css`.
+- `src/data/products.ts`: shared local product data and image paths.
+- `src/components/ProductCard.tsx`: linked product cards on Home.
+- `src/pages/ProductDetails.tsx`: finds the product from the URL, handles unknown products, and gives each product its own component instance with `key`.
+- `src/components/ProductPreview.tsx`: the detail content, selected photo and quantity state, derived subtotal, and the document title effect.
+- Component SCSS Modules: scoped styles using shared tokens from `src/index.css`.
 
-The title effect depends on `[quantity]`. Its cleanup restores the previous title before the effect runs again and when the preview unmounts. The timer effect uses `[]` and a functional state update, so it does not capture an old counter value or restart on every tick. The subtotal is calculated during rendering and does not need an effect.
-
-`StrictMode` stays enabled: development runs an extra setup/cleanup cycle to expose missing cleanup. A normal re-render preserves the preview's state; removing the component and mounting a new instance resets it.
+Photo selection and quantity changes are event handlers using `useState`. The subtotal is calculated during rendering. `useEffect` synchronizes the browser title with the product name and restores the previous title when the detail unmounts. `StrictMode` stays enabled. There is no timer.
 
 ### Manual checks
 
-1. Open the preview: quantity 1, subtotal $49, timer starting at 0, and **−** disabled.
-2. Increase to 3: subtotal $147 and title `Shop | 3 unidades`. Decrease repeatedly: quantity never goes below 1. Quantity changes must not reset the timer.
-3. Close and reopen three times, waiting a few seconds each time. Each opening resets the state and the timer must not accelerate.
-4. Navigate to Home using Navbar while the preview is open. The title must be restored; returning to Shop starts with the preview closed.
-5. To inspect cleanup, temporarily log inside the interval callback and cleanup function. After closing or navigating away, no more interval callbacks should run. Remove diagnostic logs when finished.
-6. Check keyboard controls, visible focus, and a narrow mobile viewport. Run `yarn lint` and `yarn build`.
+1. Open each product from Home and confirm its URL, description, photos, and price ($49, $25, $89).
+2. Select every thumbnail: the main photo changes and the selected button is highlighted. There are two photos for the sweater and T-shirt and three for the bag.
+3. Increase quantity to 3: subtotals should be $147, $75, and $267. Decrease repeatedly: the minimum is 1.
+4. Change photos after changing quantity: quantity and subtotal stay the same.
+5. Return Home and open another product: quantity starts at 1 and its first photo is selected. The browser title is restored when leaving the detail.
+6. Refresh a detail URL, try browser back/forward, and visit `/products/unknown` to check the not-found page.
+7. Visit `/shop`: only shared navigation and footer remain. Check keyboard controls and mobile layout. Run `corepack yarn lint` and `corepack yarn build`.
+
+### Demo photo sources
+
+Local photos under `public/products` come from [H&M's sweater listing](https://www2.hm.com/en_us/productpage.1321617001.html), [H&M's T-shirt listing](https://www2.hm.com/en_us/productpage.1262644004.html), and [Barakti's leather bag listing](https://barakti.com/brown-leather-duffle-weekender-bag). Product names, prices, and descriptions in this app are sample catalog data for the exercise.
 
 The project pins Yarn 4.18.1 in `package.json`. If your default Yarn is version 1, use `corepack yarn` in place of `yarn` for install, dev, lint, and build commands; Corepack selects the pinned version. Keep the existing Yarn 4 lockfile.

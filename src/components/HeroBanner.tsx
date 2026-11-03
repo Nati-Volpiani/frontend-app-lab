@@ -3,7 +3,7 @@ const HeroBanner = () =>  {
         <section>
             <h1>New Arrivals</h1>
             <p>The latest from our collection, now in stock.</p>
-            <button>Shop now</button>
+            <a href="#featured-products">Shop now</a>
         </section>
     );
 }
