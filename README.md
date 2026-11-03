@@ -1,14 +1,54 @@
 # Frontend App Lab
 
-**Junior Store** is an e-commerce application project, starting with the frontend. It also serves as a practical environment for learning web development and testing.
+**lab-store** is an e-commerce application project, starting with the frontend. It also serves as a practical environment for learning web development and testing.
 
 ## Current status
 
-Initial planning stage. The sprint requirements and React learning guide are available on `develop`. The application has not been implemented yet; setup and run instructions will be added once it is initialized.
+Sprint 1 is in progress.
+
+- The React + Vite project lives at the root of the repository.
+- The project uses TypeScript. Components are `.tsx` files, and `ProductCard` has typed props (`name` is a string, `price` is a number).
+- React Router is configured with `BrowserRouter`, `Routes`, and `Route`.
+- Pages: Home (`/`), Shop (`/shop`), About (`/about`), Contact (`/contact`), Cart (`/cart`), and a Not Found page for any other URL. Shop, About, Contact, and Cart show placeholder content.
+- The `Navbar` and `Footer` are shared by all pages. The Home page shows the `HeroBanner` and `FeaturedProducts` components.
+- `FeaturedProducts` uses `map()` on a local product array to render three `ProductCard` components, passing each product's name and price as props.
+- The layout uses Flexbox. On narrow screens, the product cards stack vertically and the navigation links wrap, so nothing overflows horizontally (checked on a 375 px wide screen).
+
+## Getting started
+
+Requirements: [Node.js](https://nodejs.org/) 20.19+ or 22.12+ and [Yarn](https://yarnpkg.com/) 4.
+
+From the `frontend-app-lab/` folder, run:
+
+```bash
+yarn install
+yarn dev
+```
+
+Then open http://localhost:5173/ in a browser. Press `Ctrl + C` in the terminal to stop the development server.
+
+To check the TypeScript types, run `yarn tsc`. No output means there are no type errors. `yarn build` also checks the types before building.
+
+## Project structure
+
+```
+frontend-app-lab/
+├── issues/          Sprint requirements and React guide (develop branch)
+├── public/          Static files (favicon)
+├── src/
+│   ├── components/  Reusable UI components
+│   ├── pages/       One component per page
+│   ├── App.tsx      Routes
+│   └── main.tsx     App entry point
+├── index.html
+├── package.json
+├── tsconfig.json    TypeScript configuration
+└── README.md
+```
 
 ## Planned first sprint
 
-- Build with React, Vite, JavaScript, React Router, and CSS.
+- Build with React, Vite, TypeScript, React Router, and CSS.
 - Create reusable navigation, banner, product card, and footer components.
 - Add Home, Shop, About, Contact, Cart, and Not Found pages.
 - Display three sample products and make the layout readable on mobile.

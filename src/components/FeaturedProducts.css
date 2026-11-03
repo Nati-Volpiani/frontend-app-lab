@@ -1,0 +1,10 @@
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.featured-products {
+    margin: 48px 0;
+}
